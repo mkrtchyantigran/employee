@@ -1,0 +1,17 @@
+
+
+.app-filter {
+    display: flex;
+    gap: 16px;
+    margin-top: 15px;
+    margin-left: 15px;
+
+    button {
+       padding: 10px 20px;
+       border: none;
+       border-radius:10px;
+       background: rgb(235, 181, 4);
+       color: white;
+       cursor: pointer;
+    }
+}

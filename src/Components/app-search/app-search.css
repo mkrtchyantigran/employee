@@ -1,0 +1,29 @@
+
+
+.app-search {
+
+    h2 {
+        margin-left: 40%;
+    }
+
+    button {
+        background: rgb(235, 181, 4);
+        color: rgb(255, 255, 255);
+        padding: 10px 13px;
+        border-radius:0 10px 10px 0;
+        border: none;
+        cursor: pointer;
+    }
+   
+    input {
+        padding: 10px 20px;
+        margin-left: 15px;
+        width: 80%;
+        border-style: none;
+        border: none;
+        border-radius:10px 0 0 10px;
+    }
+}
+
+
+
