@@ -1,0 +1,17 @@
+
+
+.employee-item {
+
+    h2 {
+        text-align: center;
+    }
+
+    img {
+        display: flex;
+        max-width: 40px;
+        max-height: 40px;
+        margin-left: 90%;
+        margin-bottom: 20px;
+    }
+}
+

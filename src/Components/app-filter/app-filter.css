@@ -10,8 +10,17 @@
        padding: 10px 20px;
        border: none;
        border-radius:10px;
-       background: rgb(235, 181, 4);
+       background: rgba(235, 137, 16, 0.54);
        color: white;
        cursor: pointer;
     }
+
+    button:hover {
+        box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4); 
+        transition: ease-in-out 0.2s;
+      }
+
+      &_active_btn {
+        background: rgb(235, 136, 16);
+      }
 }

@@ -3,7 +3,12 @@
 .repeating-block-box{
     padding: 10px;
     background: rgb(247, 249, 126);
-    border-radius:10px;
-    color: rgb(0, 0, 0);
+    border-radius:17px;
+    color: rgb(230, 126, 0);
     margin-bottom: 35px;
+
+   &:hover {
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4); 
+    transition: ease-in-out 0.2s;
+   }
   }

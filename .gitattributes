@@ -1,0 +1,5 @@
+# Normalize all text files to LF line endings
+* text=auto
+
+# Keep SVG files as binary
+*.svg binary
