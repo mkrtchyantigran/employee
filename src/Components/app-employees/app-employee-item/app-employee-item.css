@@ -1,17 +1,45 @@
 
 
-.employee-item {
-
-    h2 {
-        text-align: center;
+.app-employee-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    .employee-name {
+      font-size: 22px;
+      font-weight: 500;
+    }
+  
+    .employee-salary {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 22px;
+    }
+  
+    .employee-btns {
+      display: flex;
+      gap: 8px;
+  
+      button {
+        border: none;
+        padding: 12px 24px;
+        border-radius: 8px;
+        cursor: pointer;
+        background: #fefefe;
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
     }
 
-    img {
-        display: flex;
-        max-width: 40px;
-        max-height: 40px;
-        margin-left: 90%;
-        margin-bottom: 20px;
+    button:hover {
+      box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4); 
+      transition: ease-in-out 0.2s;
     }
-}
 
+    &_active_btn {
+      background: rgb(235, 136, 16);
+    } 
+  }

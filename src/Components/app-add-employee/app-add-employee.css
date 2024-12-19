@@ -1,0 +1,35 @@
+.add-new-employee {
+    h3 {
+      font-size: 32px;
+    }
+    .add-new-employee-group {
+      display: flex;
+      gap: 8px;
+  
+      input {
+        flex: 1;
+        padding: 12px 24px;
+        border: 2px solid #eee;
+        border-radius: 20px;
+        width: 100%;
+      }
+  
+      button {
+        background: rgba(235, 137, 16, 0.54);
+        color: #913737;
+        padding: 12px 24px;
+        cursor: pointer;
+        border: none;
+        border-radius: 20px;
+      }
+    }
+
+    button:hover {
+      box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4); 
+      transition: ease-in-out 0.2s;
+    }
+
+    &_active_btn {
+      background: rgb(235, 136, 16);
+    } 
+  }
