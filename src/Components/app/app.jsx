@@ -1,3 +1,4 @@
+import React, {Component} from 'react';
 import './app.css';
 import '../repeating-css/repeating-css.css'
 
@@ -7,9 +8,13 @@ import AppFilter from '../app-filter/app-filter';
 import AppEmployeeList from '../app-employees/app-employee-list/app-employee-list';
 import AppAddEmployee from '../app-add-employee/app-add-employee';
 
-export default function App () {
 
-    const data = [
+
+export default class  App  extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      data: [
         {
           id: 1,
           name: "John Smith",
@@ -53,17 +58,43 @@ export default function App () {
           salary: 442,
           increase: false
         },
-      ];
+      ],
+    }
+  }
 
-    return (
+  AddNewEmployee = (newEmployee) => {
+    this.setState((prevState) => ({
+      data: [...prevState.data, newEmployee],
+    }))
+  }
+
+  deleteEmployee = (id) => {
+    this.setState(({data}) => {
+      return {
+        data: data.filter(item => item.id !== id)
+      }
+      
+    });
+  };
+   
+    render() {
+      const { data, AddNewEmployee} = this.state;
+      return(
         <div className="App">
-            < AppInfo />
-            <div className='repeating-block-box'>
-                < AppSearch />
-                < AppFilter />
-            </div>
-            < AppEmployeeList  data={data}/>
-            < AppAddEmployee />
+              < AppInfo />
+              <div className='repeating-block-box'>
+                    < AppSearch />
+                    < AppFilter />
+                </div>
+                < AppEmployeeList  
+                data={this.state.data}
+                onDelete={this.deleteEmployee}
+                />
+                < AppAddEmployee 
+                  data={data} 
+                  addNewEmployee={AddNewEmployee} 
+                />
         </div>
-    )
+      );
+    }
 }

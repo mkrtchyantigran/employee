@@ -1,6 +1,9 @@
 .add-new-employee {
     h3 {
+      display: flex;
       font-size: 32px;
+      align-items: center;
+      justify-content: center;
     }
     .add-new-employee-group {
       display: flex;
@@ -13,6 +16,10 @@
         border-radius: 20px;
         width: 100%;
       }
+      
+      .salary {
+        border-radius: 20px 0 0 20px;
+      }
   
       button {
         background: rgba(235, 137, 16, 0.54);
@@ -20,7 +27,7 @@
         padding: 12px 24px;
         cursor: pointer;
         border: none;
-        border-radius: 20px;
+        border-radius: 0 20px 20px 0;
       }
     }
 

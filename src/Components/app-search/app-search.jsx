@@ -1,7 +1,10 @@
+import { Component } from 'react'
 import './app-search.css'
 
 
-export default function AppSearch () {
+export default class AppSearch extends Component  {
+   render() {
+
     return(
         <div className=" app-search ">
             
@@ -10,4 +13,5 @@ export default function AppSearch () {
             <button>Search</button>
         </div>
     )
+   }
 }

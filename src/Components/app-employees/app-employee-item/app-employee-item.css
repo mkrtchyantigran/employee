@@ -31,6 +31,9 @@
           width: 24px;
           height: 24px;
         }
+        &.fav {
+          display: none;
+        }
       }
     }
 
@@ -39,7 +42,17 @@
       transition: ease-in-out 0.2s;
     }
 
-    &_active_btn {
-      background: rgb(235, 136, 16);
-    } 
+    &.increased {
+      .employee-name, .employee-salary {
+        min-width: 100px;
+        height: 50px;
+        background: rgb(255, 255, 255);
+        color: darkgoldenrod;
+        
+      }
+
+    }
+   
   }
+
+  
