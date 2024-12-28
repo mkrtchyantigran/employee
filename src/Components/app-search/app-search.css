@@ -1,19 +1,10 @@
 
 
-.app-search {
-
     h2 {
         text-align: center;
     }
 
-    button {
-        background: rgb(235, 136, 16);
-        color: rgb(255, 255, 255);
-        padding: 10px 13px;
-        border-radius:0 17px 17px 0;
-        border: none;
-        cursor: pointer;
-    }
+
    
     input {
         padding: 10px 20px;
@@ -24,11 +15,6 @@
         border-radius:17px 0 0 17px;
     }
 
-    button:hover {
-        box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4); 
-        transition: ease-in-out 0.2s;
-      }
-}
-
+  
 
 

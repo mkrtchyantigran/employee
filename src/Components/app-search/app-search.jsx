@@ -3,15 +3,29 @@ import './app-search.css'
 
 
 export default class AppSearch extends Component  {
-   render() {
+    constructor(props) {
+        super(props);
+        this.state = {
+            term: ""
+        }
+        
+    }
 
-    return(
-        <div className=" app-search ">
+    onSearch = (e) => {
+        this.setState({term: e.target.value });
+        this.props.onUpdateSearch(e.target.value)
+    }
+
+    render() {
+   
+        return(
             
-            <h2>Search or Filter</h2>
-            <input type="Search" placeholder="Type here " />
-            <button>Search</button>
-        </div>
-    )
-   }
+          <input 
+            type="search" 
+            placeholder="Type here... " 
+            value={this.state.term}
+            onChange={this.onSearch}
+          />  
+        )
+    }
 }

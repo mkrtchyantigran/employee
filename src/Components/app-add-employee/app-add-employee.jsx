@@ -12,32 +12,25 @@ export default class AppAddEmployee extends Component {
   }
 
   onInputValueChange = (e) => {
-    const { name, value} = e.target;
-    this.setState({ [name]: value });
+    this.setState({
+      [e.target.value]: e.target.value
+    });
   }
 
 
-  AddNewEmployee = () => {
-    const { name, salary } = this.state;
-    const { data, addNewEmployee } = this.props;
 
-    if(name && salary) {
-      const newEmployee = {
-        id: data.length ? data[data.length - 1].id + 1 : 1,
-        name,
-        salary: parseFloat(salary),
-      }
-        addNewEmployee(newEmployee)
-        this.setState({ name: '', salary: ''});
+
+  onAddHandler = (e) => {
+    e.preventDefault();
+      if(this.state.name.length < 3 || this.state.salary) return;
+
+      this.props.onAdd(this.state.name, this.state.salary)
+      this.setState({
+        name: "",
+        salary: "",
+      });
     };
-
-    
-  };
-
- 
   
-
-
     render() {
       const { name , salary} = this.state;
 
@@ -46,9 +39,12 @@ export default class AppAddEmployee extends Component {
 
           <h3>Add new Employee</h3>
     
-          <form className="add-new-employee-group" onSubmit={this.AddNewEmployee}>
+          <form 
+            className="add-new-employee-group" 
+            onSubmit={this.onAddHandler}
+          >
             <input 
-            className="name"
+              className="name"
               type="text"
               name="name"
               value={name}
@@ -66,6 +62,6 @@ export default class AppAddEmployee extends Component {
             <button  type="submit">Add</button>
           </form>
         </div>
-      )
+      );
     }
 }

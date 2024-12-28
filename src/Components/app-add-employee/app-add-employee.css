@@ -1,9 +1,6 @@
 .add-new-employee {
     h3 {
-      display: flex;
       font-size: 32px;
-      align-items: center;
-      justify-content: center;
     }
     .add-new-employee-group {
       display: flex;

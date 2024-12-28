@@ -19,82 +19,129 @@ export default class  App  extends Component {
           id: 1,
           name: "John Smith",
           salary: 1000,
-          increase: false
+          increase: false,
+          rise: false
         },
         {
           id: 2,
           name: "Alex Shepard",
           salary: 950,
-          increase: false
-        },
-        {
-          id: 3,
-          name: "Tom Jackson",
-          salary: 645,
-          increase: false
-        },
-        {
-          id: 4,
-          name: "Adam Miller",
-          salary: 1245,
-          increase: false
-        },
-        {
-          id: 5,
-          name: "Mila Yohovich",
-          salary: 877,
-          increase: false
-        },
-
-        {
-          id: 6,
-          name: "Jane brendan",
-          salary: 329,
-          increase: false
-        },
-        {
-          id: 7,
-          name: "Mike friddman",
-          salary: 442,
-          increase: false
-        },
+          increase: false,
+          rise: false
+        }
       ],
+      term: "",
+      filter: "all"
     }
+    this.employeeId = 3;
   }
-
-  AddNewEmployee = (newEmployee) => {
-    this.setState((prevState) => ({
-      data: [...prevState.data, newEmployee],
-    }))
-  }
-
-  deleteEmployee = (id) => {
-    this.setState(({data}) => {
+  
+  onDeleteEmployee = (id) => {
+    this.setState(({ data }) => {
       return {
         data: data.filter(item => item.id !== id)
       }
       
     });
   };
+
+
+  onAddNewEmployee = (name, salary) => {
+    this.state(({data}) => {
+      return {
+        data: [
+          ...data,
+          {
+            name,
+            salary,
+            increase: false,
+            rise: false
+          }
+        ]
+      }
+    })
+  }
+
+    
+
+  onToggleIncreaseAndRise = (id) => {
+    this.setState(({data}) => ({
+      data: data.map(item => {
+      if (item.id === id && item.increase === item.rise || item.increase !== true) {
+        return {  ...item, increase: !item.increase }
+      } else if (item.id === id &&  item.increase === true || item.increase === true ) {
+        return {  ...item, rise: !item.rise }
+      }
+      return item;
+      })
+    }));
+  }
+  
+
+
+  onEmloyeeSearch = (items, term) => {
+    if(term.length === 0) return items;
+
+    return items.filter(item => {
+      return item.name.indexOf(term) > -1;
+    });
+  }
+
+  onUpdateSearch = (term) => {
+    this.setState({ term });
+  }
+
+  onEmployeeFilter = (items, filter) => {
+    switch (filter) {
+      case "rise": 
+      return items.filter(item => item.rise);
+      case "salary": 
+      return items.filter(item => item.salary > 1000);
+      default: 
+      return items;
+    }
+  }
+
+
+
+  onFilterSelect = (filter) => {
+    this.setState(({ filter }))
+  }
    
     render() {
-      const { data, AddNewEmployee} = this.state;
+     
+      const { data, term, filter} = this.state
+
+      const {
+        onDeleteEmployee,
+        onAddNewEmployee,
+        onToggleIncreaseAndRise,
+        onEmloyeeSearch,
+        onUpdateSearch,
+        onEmployeeFilter,
+        onFilterSelect
+        } = this;
+
+      const employees = data.length;
+      const increased = data.filter(e => e.increase).length;
+      const visibleData = onEmployeeFilter(onEmloyeeSearch(data, term), filter)
+
       return(
-        <div className="App">
-              < AppInfo />
+
+          <div className="App">
+              < AppInfo  employees={employees} increased={increased}/>
               <div className='repeating-block-box'>
-                    < AppSearch />
-                    < AppFilter />
-                </div>
+                    <h3>Search or Filter</h3>
+                    < AppSearch onUpdateSearch={onUpdateSearch}/>
+                    < AppFilter filter={filter} onFilterSelect={onFilterSelect}  />
+              </div>
                 < AppEmployeeList  
-                data={this.state.data}
-                onDelete={this.deleteEmployee}
-                />
-                < AppAddEmployee 
-                  data={data} 
-                  addNewEmployee={AddNewEmployee} 
-                />
-        </div>
+                data={data}
+                onDelete={onDeleteEmployee}
+                onToggleIncreaseAndRise={onToggleIncreaseAndRise}
+              />
+                <AppAddEmployee onAdd={onAddNewEmployee} />
+          </div>
       );
     }
 }

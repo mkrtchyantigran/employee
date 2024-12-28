@@ -31,9 +31,7 @@
           width: 24px;
           height: 24px;
         }
-        &.fav {
-          display: none;
-        }
+       
       }
     }
 
@@ -44,13 +42,8 @@
 
     &.increased {
       .employee-name, .employee-salary {
-        min-width: 100px;
-        height: 50px;
-        background: rgb(255, 255, 255);
-        color: darkgoldenrod;
-        
+        color: rgb(157, 0, 255);
       }
-
     }
    
   }
