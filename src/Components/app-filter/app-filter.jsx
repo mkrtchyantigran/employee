@@ -11,7 +11,7 @@ export default class AppFilter extends Component {
         const btnsData = [
             {name: "all", label: "All Emloyess"},
             {name: "rise", label: "Rise"},
-            {name: "salary", label: "Salary"},
+            {name: "salary", label: "Salary > 1000$"},
         ];
         
         const btns = btnsData.map(({ name, label }) => {

@@ -20,7 +20,7 @@
         transition: ease-in-out 0.2s;
       }
 
-      &_active_btn {
-        background: rgb(16, 235, 140);
+      .active_btn {
+        background: rgb(235, 137, 16);
       }
 }

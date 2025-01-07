@@ -47,11 +47,12 @@ export default class  App  extends Component {
 
 
   onAddNewEmployee = (name, salary) => {
-    this.state(({data}) => {
+    this.setState(({data}) => {
       return {
         data: [
           ...data,
           {
+            id: this.employeeId++,
             name,
             salary,
             increase: false,
@@ -64,20 +65,17 @@ export default class  App  extends Component {
 
     
 
-  onToggleIncreaseAndRise = (id) => {
-    this.setState(({data}) => ({
-      data: data.map(item => {
-      if (item.id === id && item.increase === item.rise || item.increase !== true) {
-        return {  ...item, increase: !item.increase }
-      } else if (item.id === id &&  item.increase === true || item.increase === true ) {
-        return {  ...item, rise: !item.rise }
-      }
-      return item;
-      })
-    }));
-  }
-  
 
+  onToggleProp = (id, prop) => {
+    this.setState(({ data }) => ({
+      data: data.map(item => {
+        if(item.id === id) {
+          return { ...item, [prop]: !item[prop]}
+        }
+        return item;
+      })
+    }))
+  }
 
   onEmloyeeSearch = (items, term) => {
     if(term.length === 0) return items;
@@ -115,7 +113,7 @@ export default class  App  extends Component {
       const {
         onDeleteEmployee,
         onAddNewEmployee,
-        onToggleIncreaseAndRise,
+        onToggleProp,
         onEmloyeeSearch,
         onUpdateSearch,
         onEmployeeFilter,
@@ -136,9 +134,9 @@ export default class  App  extends Component {
                     < AppFilter filter={filter} onFilterSelect={onFilterSelect}  />
               </div>
                 < AppEmployeeList  
-                data={data}
+                data={visibleData}
                 onDelete={onDeleteEmployee}
-                onToggleIncreaseAndRise={onToggleIncreaseAndRise}
+                onToggleProp={onToggleProp}
               />
                 <AppAddEmployee onAdd={onAddNewEmployee} />
           </div>

@@ -13,7 +13,7 @@ export default class AppAddEmployee extends Component {
 
   onInputValueChange = (e) => {
     this.setState({
-      [e.target.value]: e.target.value
+      [e.target.name]: e.target.value
     });
   }
 
@@ -22,7 +22,7 @@ export default class AppAddEmployee extends Component {
 
   onAddHandler = (e) => {
     e.preventDefault();
-      if(this.state.name.length < 3 || this.state.salary) return;
+      if(this.state.name.length < 3 || !this.state.salary) return;
 
       this.props.onAdd(this.state.name, this.state.salary)
       this.setState({
@@ -44,7 +44,6 @@ export default class AppAddEmployee extends Component {
             onSubmit={this.onAddHandler}
           >
             <input 
-              className="name"
               type="text"
               name="name"
               value={name}
@@ -52,7 +51,6 @@ export default class AppAddEmployee extends Component {
               onChange={this.onInputValueChange}
             />
             <input 
-              className="salary"
               type="text"
               name="salary"
               value={salary}

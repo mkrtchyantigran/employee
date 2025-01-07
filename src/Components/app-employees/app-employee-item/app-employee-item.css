@@ -8,12 +8,14 @@
     .employee-name {
       font-size: 22px;
       font-weight: 500;
+      margin-left: 20px;
+      cursor: pointer;
     }
   
     .employee-salary {
       background: none;
       border: none;
-      color: #fff;
+      color: rgb(174, 99, 0);
       font-size: 22px;
     }
   
@@ -31,6 +33,8 @@
           width: 24px;
           height: 24px;
         }
+
+        
        
       }
     }
@@ -42,7 +46,8 @@
 
     &.increased {
       .employee-name, .employee-salary {
-        color: rgb(157, 0, 255);
+        color: rgb(175, 129, 71);
+
       }
     }
    
