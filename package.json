@@ -1,6 +1,5 @@
 {
-  "homepage": "https://mkrtchyantigran.github.io/project",
-  "name": "project",
+  "name": "employee",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
