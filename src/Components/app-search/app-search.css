@@ -12,8 +12,15 @@
         width: 80%;
         border-style: none;
         border: none;
-        border-radius:17px 0 0 17px;
+        border-radius: 10px;
     }
+
+    @media screen and (max-width: 768px) {
+        
+        input {
+            min-width: 22.5em;
+        }
+      }
 
   
 

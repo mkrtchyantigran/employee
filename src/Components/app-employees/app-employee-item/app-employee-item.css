@@ -10,12 +10,13 @@
       font-weight: 500;
       margin-left: 20px;
       cursor: pointer;
+      color: rgba(174, 99, 0, 0.666);
     }
   
     .employee-salary {
       background: none;
       border: none;
-      color: rgb(174, 99, 0);
+      color: rgba(174, 99, 0, 0.666);
       font-size: 22px;
     }
   
@@ -46,8 +47,17 @@
 
     &.increased {
       .employee-name, .employee-salary {
-        color: rgb(175, 129, 71);
+        color: rgb(255, 147, 6);
 
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+  
+      .employee-salary {
+        min-width: fit-content;
+        text-align: center;
       }
     }
    

@@ -12,3 +12,21 @@ body {
 button, input {
   font-family: inherit;
 }
+
+h3 {
+  font-size: 32px;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 26px !important;
+  }
+
+  h2 {
+    font-size: 22px !important;
+  }
+
+  h3 {
+    font-size: 20px !important;
+  }
+}

@@ -8,27 +8,39 @@
         flex: 1;
         padding: 12px 24px;
         border: 2px solid #eee;
-        border-radius: 20px 0 0 20px ;
-        width: 100%;
+        border-radius: 10px ;
+        
       }
       
       
   
       button {
         background: rgba(235, 137, 16, 0.54);
-        color: #913737;
+        color: #ffffff;
         padding: 12px 24px;
+        font-size: 15px;
         cursor: pointer;
         border: none;
-        border-radius: 0 20px 20px 0;
-        margin-right: 15px;
+        border-radius: 10px;
+        margin-left: 15px;
       }
+
+
+      button:hover {
+        box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4); 
+        transition: ease-in-out 0.2s;
+      }
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        
+      input { 
+        min-width: 24.5px;
+      }
+        
+      }
+
     }
 
-    button:hover {
-      box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4); 
-      transition: ease-in-out 0.2s;
-    }
 
-   
   }

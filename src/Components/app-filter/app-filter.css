@@ -23,4 +23,8 @@
       .active_btn {
         background: rgb(235, 137, 16);
       }
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+      }
 }
